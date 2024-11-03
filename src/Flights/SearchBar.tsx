@@ -31,8 +31,8 @@ export function SearchBar({
     const [travelClass, setTravelClass] = useState(initialTravelClass);
     const [departureDate, setDepartureDate] = useState(initialDepartureDate);
     const [returnDate, setReturnDate] = useState(initialReturnDate);
-    const [from, setFrom] = useState('');
-    const [to, setTo] = useState('');
+    const [from, setFrom] = useState('BOS');  // Default fly from
+    const [to, setTo] = useState('LAX');      // Default fly to
 
     useEffect(() => {
         setTripType(initialTripType);
