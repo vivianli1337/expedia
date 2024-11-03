@@ -32,8 +32,8 @@ interface Stay {
 
 // Mock data
 const flightsTracking: Flight[] = [
-    { route: "BOS - EWR", dates: "Nov 22 - Dec 2", details: "Roundtrip · 1 traveler · Economy", price: "$230 No price change" },
-    { route: "BOS - EWR", dates: "Nov 23 - Dec 2", details: "Roundtrip · 1 traveler · Economy", price: "$230 No price change" }
+    { route: "BOS - LAX", dates: "Nov 22 - Dec 2", details: "Roundtrip · 1 traveler · Economy", price: "$230 No price change" },
+    { route: "BOS - LAX", dates: "Nov 23 - Dec 2", details: "Roundtrip · 1 traveler · Economy", price: "$230 No price change" }
 ];
 
 const trips: Trip[] = [

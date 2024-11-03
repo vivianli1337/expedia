@@ -80,7 +80,7 @@ export function Homepage() {
                         <Col className="location-section">
                             <div>
                                 <strong>Going To</strong>
-                                <p>EWR<br />Newark, NJ</p>
+                                <p>LAX<br />Los Angeles, CA</p>
                             </div>
                         </Col>
                         <Col className="date-section">
