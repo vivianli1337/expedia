@@ -1,0 +1,263 @@
+/* General Homepage Container */
+.homepage-container {
+    margin: 60px;
+}
+
+/* Header Section Styling */
+.header-section {
+    background: url('https://media.istockphoto.com/id/629604122/photo/cityscape-hong-kong-and-junkboat-at-twilight.jpg?s=612x612&w=0&k=20&c=iQGOvCiYdXQW-k6_uUJfvYXpJiSmQj-WCOXXOpXy1iE=') no-repeat center center;
+    background-size: cover;
+    padding: 40px;
+    color: white;
+    text-align: left;
+    border-radius: 20px;
+    margin-bottom: 50px;
+    position: relative;
+    height: 500px;
+}
+
+.header-section h1 {
+    font-weight: bold;
+}
+
+.header-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.explore-more-button {
+    background-color: #add8e6;
+    color: #000;
+    border: none;
+    margin-bottom: 20px;
+}
+
+.pill-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 45px;
+}
+
+.pill-button {
+    border-radius: 15px;
+    background-color: #b4bbbd;
+    opacity: 90%;
+    padding: 10px 20px;
+}
+
+.pill-button.active {
+    background-color: #add8e6;
+    opacity: 100%;
+    color: white;
+}
+
+/* Search Section Styling */
+.search-section {
+    margin-top: -200px; 
+    margin-left: 30px;
+    margin-right: 20px;
+    background: white;
+    height: 250px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.search-container {
+    align-items: center;
+    display: relative;
+    height: 100px;
+}
+
+.dropdown-section,
+.traveler-section,
+.location-section,
+.date-section,
+.search-button-section {
+    margin-bottom: 15px;
+}
+
+.traveler-button {
+    display: flex;
+    align-items: center;
+}
+
+.location-section strong,
+.date-section strong {
+    display: block;
+    font-size: 0.9rem;
+}
+
+.location-section p,
+.date-section p {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.search-button-section .search-button {
+    background-color: #002d72;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+/* Content Section Styling */
+.content-container {
+    padding: 20px;
+}
+
+.notification-section .notification {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.flight-cards, .trip-cards, .recent-searches {
+    display: flex;
+    gap: 15px;
+}
+
+.flight-card, .trip-card, .search-card {
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.flight-card .card-body, .trip-card .card-body, .search-card .card-body {
+    padding: 20px;
+}
+
+.trip-card img {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.trip-card .card-body {
+    text-align: left;
+}
+
+.search-card .card-title {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.search-card .card-text {
+    font-size: 0.8rem;
+}
+
+/* Spacing adjustments for the SEARCH button */
+.search-button-section {
+    margin-left: 20px; /* Adjust this for more spacing if needed */
+}
+/* OneKeyCash Promotion */
+.promo-card {
+    background-color: #f0f9ff;
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.promo-card .promo-cover-image {
+    height: 300px; /* Adjust the height to make it bigger */
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+}
+
+.promo-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Beyond Typical Stay Section */
+.beyond-stays {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.beyond-card {
+    position: relative;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 200px;
+}
+
+.amenity-image {
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.amenity-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+/* Recommended Stays Section */
+.recommended-stays {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.stay-card {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.stay-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.stay-card .card-body {
+    text-align: left;
+}
+
+/* Additional Spacing for Consistency */
+.section-title {
+    margin-top: 40px; /* Add space between each section title */
+}
+
+.notification-section .notification,
+.flight-cards .flight-card,
+.trip-cards .trip-card,
+.beyond-card,
+.stay-card {
+    margin-bottom: 20px; /* Consistent bottom margin for each item */
+}
+
+.see-all-button {
+    color: #0071eb;
+    font-weight: bold;
+    margin-top: 10px;
+}

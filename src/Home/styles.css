@@ -1,5 +1,5 @@
 body {
-    margin: 0;
+    margin: 0px;
     padding: 0;
 }
 
@@ -7,10 +7,28 @@ body * {
     font-family: inherit;
     padding: 0;
     margin: 0px;
+    font-weight: 600;
 }
 
 .shop-travel-button {
-    color: black !important;
+    color: rgb(0, 0, 0) !important;
     font-weight: 600;
     text-decoration: none;
+}
+
+.custom-hover-button {
+    color: #202020; 
+    border-color: #202020; 
+    transition: all 0.3s ease; 
+  }
+  
+  .custom-hover-button:hover {
+    background-color: #cce5fc;  
+    color: #202020; 
+    border-color: #202020;
+}
+
+.location-date-container {
+    margin: 15px;
+    margin-top: -15px;
 }
