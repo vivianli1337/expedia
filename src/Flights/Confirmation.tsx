@@ -1,8 +1,55 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ReactMarkdown from 'react-markdown';
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
-import './index.css'
+import './index.css';
 
 export function ConfirmationPage() {
+  const [chatOpen, setChatOpen] = useState(false);
+  const [chatContent, setChatContent] = useState("Loading..."); // Default loading message
+
+
+  
+  const toggleChat = () => {
+    setChatOpen(!chatOpen);
+
+    // Fetch the itinerary when the chat is opened
+    if (!chatOpen) {
+      fetchItinerary();
+    }
+  };
+
+  const fetchItinerary = async () => {
+    const requestBody = {
+      place: "Los Angelos",
+      leave_date: "2024-12-15",
+      end_date: "2024-12-20",
+      budget: "$300",
+      origin_country: "United States",
+      destination_country: "United States"
+    };
+
+    try {
+      const response = await fetch('http://127.0.0.1:5000/create_itinerary', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestBody),
+      });
+      
+
+      if (response.ok) {
+        const data = await response.json();
+        setChatContent(data.response || "Here's your itinerary!"); // Replace 'data.message' with your specific response field
+      } else {
+        setChatContent("Sorry, we couldn't retrieve your itinerary. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error fetching itinerary:", error);
+      setChatContent("There was an error fetching the itinerary.");
+    }
+  };
+
   return (
     <Container className="confirmation-page my-5">
       <Card className="p-4 shadow">
@@ -19,7 +66,7 @@ export function ConfirmationPage() {
             <Row className="mt-3">
               <Col md={6}>
                 <strong>Destination:</strong>
-                <p>Paris, France</p>
+                <p>Los Angelos, United States</p>
               </Col>
               <Col md={6}>
                 <strong>Check-in:</strong>
@@ -31,7 +78,7 @@ export function ConfirmationPage() {
               </Col>
               <Col md={6}>
                 <strong>Hotel:</strong>
-                <p>Hotel Eiffel</p>
+                <p>Hotel Hollywood</p>
               </Col>
               <Col md={6}>
                 <strong>Room Type:</strong>
@@ -65,15 +112,15 @@ export function ConfirmationPage() {
             <Row className="mt-3">
               <Col md={6}>
                 <strong>Subtotal:</strong>
-                <p>$1,200.00</p>
+                <p>$800.00</p>
               </Col>
               <Col md={6}>
                 <strong>Taxes & Fees:</strong>
-                <p>$150.00</p>
+                <p>$70.00</p>
               </Col>
               <Col md={6} className="total-cost mt-3">
                 <strong>Total:</strong>
-                <p className="font-weight-bold">$1,350.00</p>
+                <p className="font-weight-bold">$870.00</p>
               </Col>
             </Row>
           </section>
@@ -86,6 +133,29 @@ export function ConfirmationPage() {
           </div>
         </Card.Body>
       </Card>
+
+      {/* Chat Button and Chat Box */}
+      <div className="chat-box-container">
+        {!chatOpen ? (
+          <Button className="chat-toggle-button" onClick={toggleChat}>
+            💬 Plan Your Itinerary!
+          </Button>
+        ) : (
+          <div className="chat-box">
+            <div className="chat-header">
+              <h5>Chat with our AI</h5>
+              <Button variant="light" size="sm" onClick={toggleChat}>&times;</Button>
+            </div>
+            <div className="chat-content">
+              <ReactMarkdown>{chatContent}</ReactMarkdown>
+            </div>
+            <div className="chat-input">
+              <input type="text" placeholder="Type a message..." className="form-control" />
+              <Button variant="primary">Send</Button>
+            </div>
+          </div>
+        )}
+      </div>
     </Container>
   );
 }

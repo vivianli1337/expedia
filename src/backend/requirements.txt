@@ -1,0 +1,13 @@
+requests
+beautifulsoup4
+google-generativeai
+google-auth
+google-auth-oauthlib
+google-auth[tool]
+google-auth[tools]
+google-auth-oauthlib[tool]
+google-auth-oauthlib[tools]
+google-api-python-client
+Flask
+Flask-Cors
+futures

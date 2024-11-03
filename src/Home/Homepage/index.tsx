@@ -64,7 +64,9 @@ export function Homepage() {
                             </Dropdown>
                         </Col>
                         <Col className="search-button-section">
+                        <Link to="/Flights">
                             <Button variant="primary" className="search-button">SEARCH</Button>
+                        </Link>
                         </Col>
                     </Row>
 
