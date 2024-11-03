@@ -4,6 +4,7 @@ import { HashRouter, Route, Routes, Navigate } from "react-router-dom";
 //import './App.css';
 import NavigationBar from './Home/Navigation';
 import { Homepage } from './Home/Homepage';
+import ExploreLayout from './Explore/ExploreLayout';
 
 function App() {
   return (
@@ -13,8 +14,10 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<Navigate to="Home" />} />
+          <Route path="/" element={<Navigate to="Explore" />} />
         </Routes>
       </div>
+    <ExploreLayout />
     </HashRouter>
   );
 }
