@@ -8,10 +8,6 @@ import { Link, useNavigate } from 'react-router-dom';
 
 
 export function Homepage() {
-    const navigate = useNavigate();
-    const handleExploreClick = () => {
-        navigate('/explore');
-      };
     return (
         <div className="homepage-container">
             {/* Header Section */}
@@ -20,7 +16,7 @@ export function Homepage() {
                     <h1>Hey, Bean!</h1>
                     <h2>Where do you want to travel?</h2>
                     <Link to="/Explore/ExploreLayout">
-                    <Button variant="primary" className="explore-more-button" onClick={handleExploreClick}>
+                    <Button variant="primary" className="explore-more-button">
                     Explore more</Button>
                     </Link>
                     <div className="pill-buttons">
