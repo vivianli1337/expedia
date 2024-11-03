@@ -1,6 +1,5 @@
-import React from 'react';
 import { Offcanvas, Card, ListGroup, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Flight } from './flightsData';
 
 interface FlightDetailsPanelProps {
@@ -12,10 +11,23 @@ interface FlightDetailsPanelProps {
   outboundFlight?: Flight | null;
 }
 
-export function FlightDetailsPanel({ show, onHide, flight, onSelect, isLinkToPayment, outboundFlight }: FlightDetailsPanelProps) {
+export function FlightDetailsPanel({
+  show,
+  onHide,
+  flight,
+  onSelect,
+  isLinkToPayment,
+  outboundFlight,
+}: FlightDetailsPanelProps) {
+  const navigate = useNavigate();
+
   if (!flight) {
     return null;
   }
+
+  const handleNavigateToPayment = () => {
+    navigate('./PaymentPage', { state: { outboundFlight, returnFlight: flight } });
+  };
 
   return (
     <Offcanvas show={show} onHide={onHide} placement="end">
@@ -42,22 +54,13 @@ export function FlightDetailsPanel({ show, onHide, flight, onSelect, isLinkToPay
           ))}
         </ListGroup>
 
-        {/* Conditionally render Link or Button based on isLinkToPayment */}
+        {/* Conditionally render navigation button */}
         {isLinkToPayment ? (
-          <Link
-            to={{
-              pathname: "/payment",
-            }}
-            state={{
-              outboundFlight: outboundFlight,
-              returnFlight: flight,
-            }}
-            style={{ textDecoration: 'none' }}
-          >
-            <Button variant="primary" className="mt-3">
-              Proceed to Payment
-            </Button>
-          </Link>
+        
+          <Button variant="primary" className="mt-3" onClick={handleNavigateToPayment}>
+            Proceed to Payment
+          </Button>
+        
         ) : (
           <Button variant="primary" className="mt-3" onClick={onSelect}>
             Select
