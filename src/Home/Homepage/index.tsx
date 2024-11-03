@@ -3,8 +3,15 @@ import './index.css';
 import { Container, Row, Col, Button, Dropdown } from 'react-bootstrap';
 import { FaUserAlt, FaCalendarAlt } from 'react-icons/fa';
 import { Content } from './content';
+import { Link, useNavigate } from 'react-router-dom';
+
+
 
 export function Homepage() {
+    const navigate = useNavigate();
+    const handleExploreClick = () => {
+        navigate('/explore');
+      };
     return (
         <div className="homepage-container">
             {/* Header Section */}
@@ -12,7 +19,10 @@ export function Homepage() {
                 <Container>
                     <h1>Hey, Bean!</h1>
                     <h2>Where do you want to travel?</h2>
-                    <Button variant="primary" className="explore-more-button">Explore more</Button>
+                    <Link to="/Explore/ExploreLayout">
+                    <Button variant="primary" className="explore-more-button" onClick={handleExploreClick}>
+                    Explore more</Button>
+                    </Link>
                     <div className="pill-buttons">
                         <Button variant="outline-secondary" className="pill-button active">Flights</Button>
                         <Button variant="outline-secondary" className="pill-button">Stays</Button>
